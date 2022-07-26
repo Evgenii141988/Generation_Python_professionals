@@ -44,5 +44,4 @@ if __name__ == '__main__':
             size, extension = get_size(size_sum)
             print('-' * 10)
             print(f'Summary: {size} {extension}')
-            # print(f'Summary: {size_sum}')
             print()
