@@ -1,6 +1,7 @@
 from datetime import datetime, timedelta
 
 
+
 if __name__ == '__main__':
     pattern = '%H:%M'
     start = datetime.strptime(input(), pattern)
