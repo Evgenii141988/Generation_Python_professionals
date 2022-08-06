@@ -40,8 +40,25 @@ def list_comprehension(iterations):  # с использованием спис�
     return [i + 1 for i in range(iterations)]
 
 
+def for_and_append_2(iterable):  # с использованием цикла for и метода append()
+    result = []
+    for elem in iterable:
+        result.append(elem)
+    return result
+
+
+def list_comprehension_2(iterable):  # с использованием списочного выражения
+    return [elem for elem in iterable]
+
+
+def list_function(iterable):  # с использованием встроенной функции list()
+    return list(iterable)
+
+
 if __name__ == '__main__':
     func_list = [factorial, factorial_classic, factorial_recurrent]
     print(get_the_fastest_func(func_list, 900))
     funcs = [for_and_append, list_comprehension]
     print(get_the_fastest_func(funcs, 10_000_000))
+    funcs2 = [for_and_append_2, list_comprehension_2, list_function]
+    print(get_the_fastest_func(funcs2, range(100_000)))
