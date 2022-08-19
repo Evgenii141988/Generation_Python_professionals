@@ -10,7 +10,6 @@ if __name__ == '__main__':
     club3 = {"name": "FC Manchester United", "country": "England", "founded": 1878,
              "trainer": "Michael Carrick", "gaolkeeper": "D. De Gea", "league_position": 8}
 
-    # clubs = [json.dumps(club, indent='   ') for club in (club1, club2, club3)]
     clubs = [club1, club2, club3]
     with open('data.json', 'w', encoding='utf-8') as file:
         json.dump(clubs, file, indent='   ')
