@@ -12,18 +12,18 @@ def get_id(names: list, name: str) -> int:
 
 
 if __name__ == '__main__':
-    # names = ['Timur', 'Anri', 'Dima']
-    # name = 'Arthur'
-    #
-    # print(get_id(names, name))
-    #
-    # names = ['Timur', 'Anri', 'Dima', 'Arthur']
-    # name = 'Ruslan1337'
-    #
-    # try:
-    #     print(get_id(names, name))
-    # except ValueError as e:
-    #     print(e)
+    names = ['Timur', 'Anri', 'Dima']
+    name = 'Arthur'
+
+    print(get_id(names, name))
+
+    names = ['Timur', 'Anri', 'Dima', 'Arthur']
+    name = 'Ruslan1337'
+
+    try:
+        print(get_id(names, name))
+    except ValueError as e:
+        print(e)
 
     names = ['Timur', 'Anri', 'Dima', 'Arthur', 'Ruslan']
     name = ['E', 'd', 'u', 'a', 'r', 'd']
