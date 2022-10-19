@@ -1,7 +1,7 @@
 def to_binary(number: int) -> str:
     if number == 0:
         return '0'
-    if number < 2:
+    if number == 1:
         return '1'
     else:
         return to_binary(number // 2) + str(number % 2)
