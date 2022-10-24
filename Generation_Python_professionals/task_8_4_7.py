@@ -1,5 +1,4 @@
 def dict_travel(nested_dicts: dict):
-
     def rec(dicts, string=''):
         results = []
         for k, v in dicts.items():
@@ -10,18 +9,17 @@ def dict_travel(nested_dicts: dict):
                 results.extend(rec(v, string))
                 string = '.'.join(string.split('.')[:-2]) + '.' if len(string.split('.')) > 2 else ''
         return results
+
     res = rec(nested_dicts)
     print(*sorted(res), sep='\n')
 
-# def dict_travel(nested_dicts: dict, string=''):
-#     results = []
-#     for k, v in nested_dicts.items():
-#         if type(v) != dict:
-#             results.append(string + f'{k}: {v}')
-#         else:
-#             string += f'{k}.'
-#             results.extend(dict_travel(v, string))
-#     return results
+
+def dict_travel1(nestd):
+    for k, v in sorted(nestd.items()):
+        if type(v) == dict:
+            dict_travel({f'{k}.{i}': v[i] for i in v})
+        else:
+            print(f'{k}: {v}')
 
 
 if __name__ == '__main__':
