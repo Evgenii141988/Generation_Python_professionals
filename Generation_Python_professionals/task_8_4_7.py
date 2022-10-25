@@ -14,12 +14,12 @@ def dict_travel(nested_dicts: dict):
     print(*sorted(res), sep='\n')
 
 
-def dict_travel1(nestd):
-    for k, v in sorted(nestd.items()):
-        if type(v) == dict:
-            dict_travel({f'{k}.{i}': v[i] for i in v})
-        else:
-            print(f'{k}: {v}')
+# def dict_travel1(nestd):
+#     for k, v in sorted(nestd.items()):
+#         if type(v) == dict:
+#             dict_travel({f'{k}.{i}': v[i] for i in v})
+#         else:
+#             print(f'{k}: {v}')
 
 
 if __name__ == '__main__':
@@ -46,4 +46,4 @@ if __name__ == '__main__':
                         'city': {'region': 'Московская область', 'type': 'город', 'cityname': 'Москва'},
                         'postalcode': '125315'}}
 
-    dict_travel(data)
+    dict_travel1(data)
