@@ -29,6 +29,12 @@ def beegeek():
     return 'beegeek'
 
 
+@trace
+def beegeek():
+    '''beegeek docs'''
+    return 'beegeek'
+
+
 if __name__ == '__main__':
     say('Jane', 'Hello, World')
 
