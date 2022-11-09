@@ -42,13 +42,6 @@ if __name__ == '__main__':
     print(sub.__doc__)
     sub(20, 5, c=10)
 
-
-    @trace
-    def beegeek():
-        '''beegeek docs'''
-        return 'beegeek'
-
-
     print(beegeek())
     print(beegeek.__name__)
     print(beegeek.__doc__)
