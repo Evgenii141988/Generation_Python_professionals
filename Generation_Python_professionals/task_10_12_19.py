@@ -9,8 +9,7 @@ def password_gen1():
 
 
 def password_gen():
-    return iter(
-        sorted((str(elm[0]) + str(elm[1]) + str(elm[2]) for elm in product(range(10), repeat=3)), key=lambda x: int(x)))
+    return (f'{elm[0]}{elm[1]}{elm[2]}' for elm in product(range(10), repeat=3))
 
 
 if __name__ == '__main__':
