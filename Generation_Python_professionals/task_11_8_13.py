@@ -11,3 +11,7 @@ if __name__ == '__main__':
     while n:
         string, n = re.subn(r'\b(\W*)(\w+)(\W*)\b(\W*)\b\2\b', get_string, string)
         print(string)
+
+    pattern = r'(\b\w+\b)(\W+\1\b)+'
+
+    print(re.sub(pattern, r'\1', input()))
