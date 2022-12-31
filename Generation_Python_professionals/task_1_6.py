@@ -1,4 +1,4 @@
 if __name__ == '__main__':
-    n = int(input())
-    x = n // 6
-    print(f'{x} {4 * x} {x}')
+    x, y, z = map(int, input().split())
+    price = 3
+    print(price * x + (2 + price) * y + (9 + price) * z)
