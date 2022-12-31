@@ -1,4 +1,3 @@
 if __name__ == '__main__':
-    x, y, z = map(int, input().split())
-    price = 3
-    print(price * x + (2 + price) * y + (9 + price) * z)
+    x, y = map(int, input().split())
+    print(y - 1, x - 1, sep=' ')
