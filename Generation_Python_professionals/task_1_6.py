@@ -1,4 +1,4 @@
 if __name__ == '__main__':
-    string = input().swapcase()
+    string = input().title().swapcase()
     print(string)
 
