@@ -1,4 +1,4 @@
 if __name__ == '__main__':
     string = input()
-    print(string.rjust(10, '!'))
+    print(string.zfill(10))
 
