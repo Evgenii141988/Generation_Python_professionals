@@ -1,4 +1,8 @@
 import sys
 if __name__ == '__main__':
-    print(f'{int(input()):-^15}')
+    text = input()
+    print(f"|{text:&^20}|")
+    print(f"|{text:&>20}|")
+    print(f"|{text:&<20}|")
+
 
