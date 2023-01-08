@@ -1,11 +1,18 @@
-import sys, re
+import sys
+
+
+def fib(n):
+    count = 2
+    a, b = 1, 1
+    while count < n:
+        a += b
+        a, b = b, a
+        count += 1
+    return b
+
 
 if __name__ == '__main__':
-    string = input()
-    count = 0
-    for i, lit in enumerate(string):
-        if lit == 'a':
-            for s in string[i + 1:]:
-                if s == 'b':
-                    count += 1
-    print(count)
+    # number = int(input())
+    number = 10 ** 5
+    print(fib(number) % 1000000007)
+    # print(fib(number))
