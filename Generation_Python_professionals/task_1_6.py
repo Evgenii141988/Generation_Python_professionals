@@ -1,4 +1,3 @@
-new_func = ''
 
 
 def Set(func):
@@ -7,7 +6,6 @@ def Set(func):
 
 
 def Compute(string):
-    global new_func
     return new_func(string)
 
 
