@@ -8,24 +8,24 @@ def cmp_prev(val, numbers=[]):
 
 
 if __name__ == '__main__':
-    print(cmp_prev(0))  # False
-    print(cmp_prev(1))  # True
-    print(cmp_prev(68))  # True
-    print(cmp_prev(57))  # False
-    print(cmp_prev(346))  # True
-    print(cmp_prev(4))  # False
-    print(cmp_prev(5))  # False
-    print(cmp_prev(10))  # True
-    print(cmp_prev(15))  # False
-    print(cmp_prev(-7))  # False
-    print(cmp_prev(8))  # False
-    print(cmp_prev(2))  # True
-    print(cmp_prev(-6))  # False
-    print(cmp_prev(-7))  # False
-    print(cmp_prev(-6))  # True
-    print(cmp_prev(0))  # True
-    print(cmp_prev(-5))  # True
-    print(cmp_prev(65))  # True
-    print(cmp_prev(456))  # True
-    print(cmp_prev(-678))  # False
-    print(cmp_prev(77))  # True
+    assert cmp_prev(0) == False
+    assert cmp_prev(1) == True
+    assert cmp_prev(68) == True
+    assert cmp_prev(57) == False
+    assert cmp_prev(346) == True
+    assert cmp_prev(4) == False
+    assert cmp_prev(5) == False
+    assert cmp_prev(10) == True
+    assert cmp_prev(15) == False
+    assert cmp_prev(-7) == False
+    assert cmp_prev(8) == False
+    assert cmp_prev(2) == True
+    assert cmp_prev(-6) == False
+    assert cmp_prev(-7) == False
+    assert cmp_prev(-6) == True
+    assert cmp_prev(0) == True
+    assert cmp_prev(-5) == True
+    assert cmp_prev(65) == True
+    assert cmp_prev(456) == True
+    assert cmp_prev(-678) == False
+    assert cmp_prev(77) == True
