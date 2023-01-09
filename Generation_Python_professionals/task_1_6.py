@@ -1,8 +1,13 @@
-def check_int(n: float) -> bool:
-    return n == int(n)
+def almost_double_factorial(n: int) -> int:
+    mul = 1
+    for i in range(1, n + 1):
+        if i % 2 != 0:
+            mul *= i
+    return mul
 
 
 if __name__ == '__main__':
-    number = int(input())
-    count = int(number ** (1 / 2)) + int(number ** (1 / 3)) - int(number ** (1 / 6))
-    print(count)
+    print(almost_double_factorial(10))
+    print(almost_double_factorial(50))
+    print(almost_double_factorial(100))
+    print(almost_double_factorial(0))
