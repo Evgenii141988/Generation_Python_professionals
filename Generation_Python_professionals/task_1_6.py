@@ -1,5 +1,3 @@
-
-
 def Set(func):
     global new_func
     new_func = func
@@ -10,8 +8,4 @@ def Compute(string):
 
 
 if __name__ == '__main__':
-    Set(len)
-    print(Compute('Hello'))  # 5
-    print(Compute('129'))  # 3
-    Set(max)
-    print(Compute('129'))  # 9
+    print([num for num in map(int, input().split()) if num not in (3, 5, 7, 9)])
