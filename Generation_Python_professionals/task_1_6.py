@@ -1,11 +1,8 @@
 if __name__ == '__main__':
-    sign = input()
-    match sign:
-        case 'Овен' | 'Лев' | 'Стрелец':
-            print('Огненный')
-        case 'Телец' | 'Дева' | 'Козерог':
-            print('Земной')
-        case 'Близнецы' | 'Весы' | 'Водолей':
-            print('Воздушный')
-        case _:
-            print('Водный')
+    string = input()
+    while string:
+        l = len(string)
+        string = string.replace('()', '')
+        if len(string) == l:
+            break
+    print(('YES', 'NO')[bool(string)])
