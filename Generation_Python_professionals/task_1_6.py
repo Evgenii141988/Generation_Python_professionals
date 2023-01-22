@@ -1,20 +1,28 @@
 import pprint
 
 if __name__ == '__main__':
-    persons = [
-        ('Allison Hill', 334053, 'M', '1635644202'),
-        ('Megan Mcclain', 191161, 'F', '2101101595'),
-        ('Brandon Hall', 731262, 'M', '6054749119'),
-        ('Michelle Miles', 539898, 'M', '1355368461'),
-        ('Donald Booth', 895667, 'M', '7736670978'),
-        ('Gina Moore', 900581, 'F', '7018476624'),
-        ('James Howard', 460663, 'F', '5461900982'),
-        ('Monica Herrera', 496922, 'M', '2955495768'),
-        ('Sandra Montgomery', 479201, 'M', '5111859731'),
-        ('Amber Perez', 403445, 'M', '0602870126')
-    ]
-    data = {}
-    for name, salary, gender, passport in persons:
-        data[name] = dict(zip(('salary', 'gender', 'passport'), (salary, gender, passport)))
-
-    print(data)
+    user = {
+        "id": 4170,
+        "uid": "5e941db5-9e0f-4f94-9fc5-734110c6be14",
+        "password": "SyUpfo1ljm",
+        "first_name": "Teresa",
+        "last_name": "Wehner",
+        "username": "teresa.wehner",
+        "email": "teresa.wehner@email.com",
+        "gender": "Non-binary",
+        "phone_number": "+674 424.561.2776",
+        "social_insurance_number": "637316241",
+        "date_of_birth": "1993-08-17",
+        "employment": {
+            "title": "Central Hospitality Liaison",
+            "key_skill": "Organisation"
+        },
+        "subscription": {
+            "plan": "Essential",
+            "status": "Idle",
+            "payment_method": "Debit card",
+            "term": "Annual"
+        }
+    }
+    new_dict = {key: user[key] for key in input().split()}
+    print(new_dict)
