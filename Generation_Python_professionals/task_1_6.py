@@ -1,6 +1,7 @@
 import pprint
 
 if __name__ == '__main__':
-    n = int(input())
-    len_list = [len(set(list(map(int, input().split())))) for _ in range(n)]
-    print(*len_list, sep='\n')
+    my_set = {'government', 'control', 'winter', 'few', 'generation',
+              'service', 'national', 'tradition', 'government'}
+        my_set.update(['concert', 'brown', 'jacket', 'value'])
+    print(my_set)
