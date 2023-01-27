@@ -1,9 +1,14 @@
 import pprint
 
 if __name__ == '__main__':
-    english_words = ('attack', 'bless', 'look', 'reckless', 'short', 'monster', 'trolley', 'sound',
-                     'ambiguity', 'researcher', 'trunk', 'coat', 'quantity', 'question', 'tenant',
-                     'miner', 'definite', 'kit', 'spectrum', 'satisfied', 'selection', 'carve',
-                     'ask', 'go', 'suggest')
-    for i, word in enumerate(english_words, 1):
-        print(f'Word № {i} = {word}')
+    number = input()
+    count = 0
+    for i, num in enumerate(number[::-1], 1):
+        num = int(num)
+        if i % 2 == 0:
+            num *= 2
+            if num > 9:
+                num -= 9
+        count += num
+    print(count % 10 == 0)
+
