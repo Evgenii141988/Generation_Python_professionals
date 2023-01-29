@@ -1,6 +1,6 @@
-def exponentiation(num: int) -> str:
-    print(f'{num ** 2} {num ** 3}')
+def sum_num(string: str) -> int:
+    print(sum((int(s) for s in string if s.isdigit())))
 
 
 if __name__ == '__main__':
-    exponentiation(int(input()))
+    sum_num(input())
