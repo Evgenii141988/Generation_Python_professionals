@@ -1,12 +1,11 @@
-def get_body_mass_index(weight: (int | float), height: (int | float)) -> str:
-    index = weight / (height / 100) ** 2
-    if index < 18.5:
-        print("Недостаточная масса тела")
-    elif index > 25:
-        print("Избыточная масса тела")
-    else:
-        print("Норма")
+# объявление функции
+def is_between(name, surname, middlename):
+    print(surname <= name <= middlename or middlename <= name <= surname)
 
 
 if __name__ == '__main__':
-    get_body_mass_index(70, 170)
+    # считываем данные
+    a, b, c = map(int, input().split())
+
+    # вызываем функцию
+    is_between(a, b, c)
