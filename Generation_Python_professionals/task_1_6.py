@@ -1,11 +1,11 @@
 # объявление функции
-def is_between(name, surname, middlename):
-    print(surname <= name <= middlename or middlename <= name <= surname)
+def count_letter(text, letter):
+    print(text.count(letter))
 
 
 if __name__ == '__main__':
     # считываем данные
-    a, b, c = map(int, input().split())
-
+    text = input()
+    symbol = input()
     # вызываем функцию
-    is_between(a, b, c)
+    count_letter(text, symbol)
