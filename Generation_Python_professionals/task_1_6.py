@@ -1,11 +1,20 @@
 # объявление функции
-def count_letter(text, letter):
-    print(text.count(letter))
+def generate_fizz_buzz_list(n: int):
+    result = []
+    for i in range(1, n + 1):
+        match i:
+            case int() if i % 3 == 0 and i % 5 == 0:
+                result.append('FizzBuzz')
+            case int() if i % 3 == 0:
+                result.append('Fizz')
+            case int() if i % 5 == 0:
+                result.append('Buzz')
+            case _:
+                result.append(i)
+    return result
 
 
 if __name__ == '__main__':
-    # считываем данные
-    text = input()
-    symbol = input()
-    # вызываем функцию
-    count_letter(text, symbol)
+    print(generate_fizz_buzz_list(3))
+    print(generate_fizz_buzz_list(7))
+    print(generate_fizz_buzz_list(15))
