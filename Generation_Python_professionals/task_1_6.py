@@ -1,15 +1,13 @@
 from collections import Counter
 
 
-def first_repeated_word(string: str) -> str | bool:
-    """Находит первый дубль в строке"""
-    words = []
-    for word in string.split():
-        if word in words:
-            return word
-        words.append(word)
+def shift_letter(letter: str, shift: int) -> str:
+    """Функция сдвигает символ letter на shift позиций"""
+    n = (ord(letter) - 97 + shift) % 26 + 97
+    return chr(n)
 
 
 if __name__ == '__main__':
-    print(first_repeated_word('hello hi hello'))
-    print(first_repeated_word('hello hi Hello'))
+    print(shift_letter('z', 5))
+    print(shift_letter('w', 28))
+    print(shift_letter('w', -26))
