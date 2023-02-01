@@ -1,12 +1,15 @@
 from collections import Counter
 
 
-def count_AGTC(dna: str) -> tuple:
-    new_dna = Counter(dna)
-    return tuple(new_dna[elm] if elm in new_dna else 0 for elm in 'AGTC' )
+def first_repeated_word(string: str) -> str | bool:
+    """Находит первый дубль в строке"""
+    words = []
+    for word in string.split():
+        if word in words:
+            return word
+        words.append(word)
+
 
 if __name__ == '__main__':
-    print(count_AGTC('AGGTC'))
-    print(count_AGTC('AAAATTT'))
-    print(count_AGTC('AGTTTTT'))
-    print(count_AGTC('CCT'))
+    print(first_repeated_word('hello hi hello'))
+    print(first_repeated_word('hello hi Hello'))
