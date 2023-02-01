@@ -1,20 +1,12 @@
-# объявление функции
-def generate_fizz_buzz_list(n: int):
-    result = []
-    for i in range(1, n + 1):
-        match i:
-            case int() if i % 3 == 0 and i % 5 == 0:
-                result.append('FizzBuzz')
-            case int() if i % 3 == 0:
-                result.append('Fizz')
-            case int() if i % 5 == 0:
-                result.append('Buzz')
-            case _:
-                result.append(i)
-    return result
+from collections import Counter
 
+
+def count_AGTC(dna: str) -> tuple:
+    new_dna = Counter(dna)
+    return tuple(new_dna[elm] if elm in new_dna else 0 for elm in 'AGTC' )
 
 if __name__ == '__main__':
-    print(generate_fizz_buzz_list(3))
-    print(generate_fizz_buzz_list(7))
-    print(generate_fizz_buzz_list(15))
+    print(count_AGTC('AGGTC'))
+    print(count_AGTC('AAAATTT'))
+    print(count_AGTC('AGTTTTT'))
+    print(count_AGTC('CCT'))
