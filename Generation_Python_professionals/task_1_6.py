@@ -7,7 +7,12 @@ def shift_letter(letter: str, shift: int) -> str:
     return chr(n)
 
 
+def caesar_cipher(string: str, shift: int) -> str:
+    """Шифр цезаря"""
+    return ''.join([shift_letter(letter, shift) if letter.isalpha() else letter for letter in string])
+
+
 if __name__ == '__main__':
-    print(shift_letter('z', 5))
-    print(shift_letter('w', 28))
-    print(shift_letter('w', -26))
+    print(caesar_cipher('lost in the echo', 27))
+    # print(shift_letter('w', 28))
+    # print(shift_letter('w', -26))
