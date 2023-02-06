@@ -1,12 +1,12 @@
 from collections import Counter
 
 
-def replace(text: str, old: str, new: str = "") -> str:
-    return text.replace(old, new)
+def make_header(text: str, n: int = 1) -> str:
+    return f'<h{n}>{text}</h{n}>'
 
 
 if __name__ == '__main__':
-    print(replace('Нет', 'т'))
-    print(replace('Bella Ciao', 'a'))
-    print(replace('nobody; i myself farewell analysis', 'l', 'z'))
-    print(replace('commend me to my kind lord meaning', 'M', 'w'))
+    print(make_header('Нет'))
+    print(make_header('Bella Ciao', 4))
+    print(make_header('Go little rock star', 6))
+    print(make_header('Девальвации не будет. Твердо и четко'))
