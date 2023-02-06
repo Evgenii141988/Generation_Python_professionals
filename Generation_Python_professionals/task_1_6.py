@@ -1,12 +1,22 @@
 from collections import Counter
 
 
-def make_header(text: str, n: int = 1) -> str:
-    return f'<h{n}>{text}</h{n}>'
+def create_matrix(size: int = 3, up_fill: int = 0, down_fill: int = 0) -> list[list[int]]:
+    result = []
+    for i in range(size):
+        row = []
+        for j in range(size):
+            if i == j:
+                row.append(i + 1)
+            elif j > i:
+                row.append(up_fill)
+            else:
+                row.append(down_fill)
+        result.append(row)
+    return result
 
 
 if __name__ == '__main__':
-    print(make_header('Нет'))
-    print(make_header('Bella Ciao', 4))
-    print(make_header('Go little rock star', 6))
-    print(make_header('Девальвации не будет. Твердо и четко'))
+    print(create_matrix())
+    print(create_matrix(4))
+
