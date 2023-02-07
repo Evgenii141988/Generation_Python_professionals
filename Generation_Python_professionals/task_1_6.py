@@ -1,10 +1,9 @@
-from functools import reduce
 
-
-def multiply(*args: [int | float]) -> str:
-    return reduce(lambda x, y: x * y, args, 1)
+def only_one_positive(*args: [int | float]) -> str:
+    return len([n for n in args if n > 0]) == 1
 
 
 if __name__ == '__main__':
-    print(multiply(8, 11))
-    print(multiply(10, 10, 10, 10, 9))
+    print(only_one_positive(-1, 0, -3, 5, -3))
+    print(only_one_positive(1, 2))
+    print(only_one_positive())
