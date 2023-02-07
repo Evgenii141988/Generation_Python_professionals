@@ -1,9 +1,9 @@
 
-def only_one_positive(*args: [int | float]) -> str:
-    return len([n for n in args if n > 0]) == 1
+def create_actor(data: dict = {'name': 'Райан', 'surname': 'Рейнольдс', 'age': 46}, **kwargs) -> dict:
+    return data | kwargs
 
 
 if __name__ == '__main__':
-    print(only_one_positive(-1, 0, -3, 5, -3))
-    print(only_one_positive(1, 2))
-    print(only_one_positive())
+    print(create_actor())
+    print(create_actor(height=190, movies=['Дедпул', 'Главный герой']))
+    print(create_actor(name='Jack', age=20))
