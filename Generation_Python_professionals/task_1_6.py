@@ -1,20 +1,8 @@
-
-def create_actor(data: dict = {'name': 'Райан', 'surname': 'Рейнольдс', 'age': 46}, **kwargs) -> dict:
-    return data | kwargs
-
-
 if __name__ == '__main__':
-    n = int(input())
-    A, B, C = map(int, input().split())
-    matrix = [[0 for j in range(n)] for i in range(n)]
-    for i in range(n):
-        for j in range(n):
-            if i == j:
-                matrix[i][j] = C
-            elif i < j:
-                matrix[i][j] = A
-            else:
-                matrix[i][j] = B
+    n, m = map(int, input().split())
+    matrix = [list(map(int, input().split())) for _ in range(n)]
+    for i in range(n - 2, -1, -1):
+        for j in range(m - 2, -1, -1):
+            matrix[i][j] = matrix[i][j + 1] + matrix[i + 1][j]
     for row in matrix:
-        print(*row)
-
+        print(*row, sep=' ')
