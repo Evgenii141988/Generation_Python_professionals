@@ -1,8 +1,11 @@
-def print_to(n: int) -> None:
-    if n > 0:
-        print_to(n - 1)
-        print(n)
+def double_fact(n: int) -> int:
+    if n == 1:
+        return 1
+    elif n == 2:
+        return 2
+    else:
+        return double_fact(n - 2) * n
 
 
 if __name__ == '__main__':
-    print_to(4)
+    print(double_fact(7))
