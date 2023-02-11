@@ -1,9 +1,12 @@
-def get_combin(n: int, k: int) -> int:
-    if k == 0 or k == n:
-        return 1
-    return get_combin(n - 1, k) + get_combin(n - 1, k - 1)
+def ackermann(m: int, n: int) -> int:
+    if m == 0:
+        return n + 1
+    if m > 0 and n == 0:
+        return ackermann(m - 1, 1)
+    if m > 0 and n > 0:
+        return ackermann(m - 1, ackermann(m, n - 1))
 
 
 if __name__ == '__main__':
-    print(get_combin(5, 5))
-    print(get_combin(5, 2))
+    print(ackermann(3, 2))
+    print(ackermann(3, 0))
