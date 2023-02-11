@@ -1,11 +1,9 @@
-def tribonacci(n: int) -> int:
-    if n <= 1:
-        return 0
-    elif n == 2:
+def get_combin(n: int, k: int) -> int:
+    if k == 0 or k == n:
         return 1
-    else:
-        return tribonacci(n - 1) + tribonacci(n - 2) + tribonacci(n - 3)
+    return get_combin(n - 1, k) + get_combin(n - 1, k - 1)
 
 
 if __name__ == '__main__':
-    print(tribonacci(7))
+    print(get_combin(5, 5))
+    print(get_combin(5, 2))
