@@ -7,12 +7,25 @@ def text_decor(func):
     return inner
 
 
+def repeater(func):
+    def inner(*args, **kwargs):
+        func(*args, **kwargs)
+        func(*args, **kwargs)
+
+    return inner
+
+
 @text_decor
 def simple_func():
     print('I just simple python func')
 
 
-@text_decor
+# @text_decor
+# def multiply(num1, num2):
+#     print(num1 * num2)
+
+
+@repeater
 def multiply(num1, num2):
     print(num1 * num2)
 
@@ -20,3 +33,5 @@ def multiply(num1, num2):
 if __name__ == '__main__':
     simple_func()
     multiply(3, 5)
+    multiply(2, 7)
+
