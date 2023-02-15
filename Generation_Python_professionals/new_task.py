@@ -1,37 +1,33 @@
-def text_decor(func):
+def double_it(func):
     def inner(*args, **kwargs):
-        print('Hello')
-        func(*args, **kwargs)
-        print('Goodbye!')
+        return 2 * func(*args, **kwargs)
 
     return inner
 
-
-def repeater(func):
-    def inner(*args, **kwargs):
-        func(*args, **kwargs)
-        func(*args, **kwargs)
-
-    return inner
-
-
-@text_decor
-def simple_func():
-    print('I just simple python func')
-
-
-# @text_decor
-# def multiply(num1, num2):
-#     print(num1 * num2)
-
-
-@repeater
+@double_it
 def multiply(num1, num2):
-    print(num1 * num2)
+    return num1 * num2
+
+
+@double_it
+def some_func_return(a, b, c):
+    return a ** b + c
+
+
+@double_it
+def get_sum(*args):
+    return sum(args)
 
 
 if __name__ == '__main__':
-    simple_func()
-    multiply(3, 5)
-    multiply(2, 7)
+    assert multiply(9, 4) == 72
+    assert multiply(100, 4) == 800
 
+    assert get_sum(1, 2, 3, 4, 5) == 30
+
+    assert some_func_return(4, 5, 4) == 2056
+    assert get_sum(14, 51, 34) == 198
+    assert get_sum(14) == 28
+    assert get_sum() == 0
+    assert get_sum(43, 5, 43, 43, 43, 43, 3, 2) == 450
+    print('Good')
