@@ -1,41 +1,40 @@
 from functools import wraps
 
 
-# Напишите определение декоратора add_args
-def add_args(func):
+# Напишите определение декоратора validate_args
+def validate_args(func):
     @wraps(func)
     def inner(*args, **kwargs):
-        args = ('begin',) + args + ('end',)
-        return func(*args, **kwargs)
+        match args:
+            case (int(), int()):
+                return func(*args, **kwargs)
+            case a, :
+                return 'No enough arguments'
+            case a, b, c, *_:
+                return 'Too many arguments'
+            case _:
+                return 'Wrong types'
 
     return inner
 
 
 # Код ниже не удаляйте, он нужен для проверки   
-@add_args
-def concatenate(*args):
-    """
-    Возвращает конкатенацию переданных строк
-    """
-    return ', '.join(args)
-
-
-@add_args
-def find_max_word(*args):
-    """
-    Возвращает слово максимальной длины
-    """
-    return max(args, key=len)
+@validate_args
+def add_numbers(x, y):
+    """Return sum of x and y"""
+    return x + y
 
 
 if __name__ == '__main__':
-    print(concatenate('hello', 'world', 'my', 'name is', 'Artem'))
-    assert concatenate('hello', 'world', 'my', 'name is', 'Artem') == 'begin, hello, world, my, name is, Artem, end'
-    assert concatenate('my', 'name is', 'Artem') == 'begin, my, name is, Artem, end'
-    assert concatenate.__name__ == 'concatenate'
-    assert concatenate.__doc__.strip() == """Возвращает конкатенацию переданных строк"""
-    assert find_max_word('my') == 'begin'
-    assert find_max_word('my', 'how') == 'begin'
-    assert find_max_word('my', 'how', 'maximum') == 'maximum'
-    assert find_max_word.__name__ == 'find_max_word'
-    assert find_max_word.__doc__.strip() == """Возвращает слово максимальной длины"""
+    assert add_numbers(4, 5) == 9
+    assert add_numbers(4) == 'No enough arguments'
+    assert add_numbers('hello') == 'No enough arguments'
+    assert add_numbers(3, 5, 6) == 'Too many arguments'
+    assert add_numbers('a', 'b', 'c') == 'Too many arguments'
+    assert add_numbers(4.5, 5.1) == 'Wrong types'
+    assert add_numbers('hello', 4) == 'Wrong types'
+    assert add_numbers(9, 'hello') == 'Wrong types'
+    assert add_numbers([1, 3], {}) == 'Wrong types'
+    assert add_numbers.__name__ == 'add_numbers'
+    assert add_numbers.__doc__.strip() == 'Return sum of x and y'
+    print('Good')
