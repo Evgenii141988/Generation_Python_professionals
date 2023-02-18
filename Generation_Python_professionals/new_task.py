@@ -1,40 +1,40 @@
 from functools import wraps
 
 
-# Напишите определение декоратора validate_args
-def validate_args(func):
+# Напишите определение декоратора memoize
+def memoize(func):
+    memo = {}
+
     @wraps(func)
     def inner(*args, **kwargs):
-        match args:
-            case (int(), int()):
-                return func(*args, **kwargs)
-            case a, :
-                return 'No enough arguments'
-            case a, b, c, *_:
-                return 'Too many arguments'
-            case _:
-                return 'Wrong types'
+        n, = args
+        if n not in memo:
+            memo[n] = func(*args, **kwargs)
+        return memo[n]
 
     return inner
 
 
-# Код ниже не удаляйте, он нужен для проверки   
-@validate_args
-def add_numbers(x, y):
-    """Return sum of x and y"""
-    return x + y
+# Код ниже не удаляйте, он нужен для проверки
+
+
+@memoize
+def fibonacci(n):
+    """
+    Возвращает n-ое число Фибоначчи
+    """
+    if n < 2:
+        return n
+    return fibonacci(n - 1) + fibonacci(n - 2)
 
 
 if __name__ == '__main__':
-    assert add_numbers(4, 5) == 9
-    assert add_numbers(4) == 'No enough arguments'
-    assert add_numbers('hello') == 'No enough arguments'
-    assert add_numbers(3, 5, 6) == 'Too many arguments'
-    assert add_numbers('a', 'b', 'c') == 'Too many arguments'
-    assert add_numbers(4.5, 5.1) == 'Wrong types'
-    assert add_numbers('hello', 4) == 'Wrong types'
-    assert add_numbers(9, 'hello') == 'Wrong types'
-    assert add_numbers([1, 3], {}) == 'Wrong types'
-    assert add_numbers.__name__ == 'add_numbers'
-    assert add_numbers.__doc__.strip() == 'Return sum of x and y'
+    assert fibonacci(50) == 12586269025
+    assert fibonacci(60) == 1548008755920
+    assert fibonacci(70) == 190392490709135
+    assert fibonacci(80) == 23416728348467685
+    assert fibonacci(90) == 2880067194370816120
+    assert fibonacci(100) == 354224848179261915075
+    assert fibonacci.__name__ == 'fibonacci'
+    assert fibonacci.__doc__.strip() == 'Возвращает n-ое число Фибоначчи'
     print('Good')
