@@ -1,4 +1,4 @@
-def find_unic_words(file_name: str) -> int:
+def find_words(file_name: str) -> dict:
     words = {}
     with open(file_name, 'r', encoding='utf-8') as file:
         for word in [word.upper() for word in file.read().split()]:
@@ -7,4 +7,4 @@ def find_unic_words(file_name: str) -> int:
 
 
 if __name__ == '__main__':
-    print(find_unic_words('lorem.txt'))
+    print(find_words('lorem.txt'))
