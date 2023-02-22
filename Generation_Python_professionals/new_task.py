@@ -1,7 +1,8 @@
-def find_lines_len_more_6(file_name: str) -> int:
+def find_unic_words(file_name: str) -> int:
     with open(file_name, 'r', encoding='utf-8') as file:
-        strings = [line.strip() for line in file.readlines() if len(line.strip()) > 6]
-        return len(strings)
+        words = set([word.lower() for word in file.read().split()])
+        return len(words)
 
 
 if __name__ == '__main__':
+    print(find_unic_words('lorem.txt'))
