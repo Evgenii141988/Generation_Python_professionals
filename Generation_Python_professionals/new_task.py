@@ -1,8 +1,7 @@
-def file_n_lines(file_name: str, n: int) -> None:
+def find_lines_len_more_6(file_name: str) -> int:
     with open(file_name, 'r', encoding='utf-8') as file:
-        strings = [string.strip() for string in file.readlines()]
-        for string in strings[:n]:
-            print(string)
+        strings = [line.strip() for line in file.readlines() if len(line.strip()) > 6]
+        return len(strings)
+
 
 if __name__ == '__main__':
-
