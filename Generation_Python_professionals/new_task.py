@@ -1,11 +1,7 @@
-# Создайте генератор
-from_10_to_20 = (i for i in range(10, 21))
+words = ['feel', 'graduate', 'movie', 'fashionable', 'bacon', 'drop', 'produce', 'acquisition',
+         'cheap', 'strength', 'master', 'perception', 'noise', 'strange', 'am']
 
-# Распечатайте три первых значения
-print(next(from_10_to_20))
-print(next(from_10_to_20))
-print(next(from_10_to_20))
+lens = (len(word) for word in words)
 
-# выведите все оставшиеся
-for value in from_10_to_20:
-    print(value)
+for i in lens:
+    print(i)
