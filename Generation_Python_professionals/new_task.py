@@ -1,7 +1,6 @@
-words = ['feel', 'graduate', 'movie', 'fashionable', 'bacon', 'drop', 'produce', 'acquisition',
-         'cheap', 'strength', 'master', 'perception', 'noise', 'strange', 'am']
+from itertools import cycle
 
-lens = (len(word) for word in words)
-
-for i in lens:
-    print(i)
+if __name__ == '__main__':
+    days = ((day, name)for day, name in zip(range(1, 78), cycle(['Saturday', 'Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday'])))
+    for elm in days:
+        print(elm)
