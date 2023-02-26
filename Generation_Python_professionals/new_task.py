@@ -1,6 +1,11 @@
-from itertools import cycle
+from typing import Generator
+
+
+def gen_squares(n: int) -> Generator[int, int, None]:
+    for i in range(1, n + 1):
+        yield i ** 2
+
 
 if __name__ == '__main__':
-    days = ((day, name)for day, name in zip(range(1, 78), cycle(['Saturday', 'Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday'])))
-    for elm in days:
-        print(elm)
+    for i in gen_squares(3):
+        print(i)
