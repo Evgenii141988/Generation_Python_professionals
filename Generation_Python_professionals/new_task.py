@@ -1,6 +1,13 @@
+def from_hex_to_rgb(color: str) -> tuple:
+    return tuple(map(lambda x: int(x, 16), [color[1:3], color[3:5], color[5:]]))
+
+
 if __name__ == '__main__':
-    numbers = [116, -411, 448, 636, -254, -295, 220, 216, 187, -150, -458, -372, 450, 141, -626, -168, -383, 389, -184,
-               609, 221, 311, 526, 254, -631, -174, -555, -338, 226, 695, -16, 333, 12, -600, -258, -383, -101, 121, 40,
-               278, 118, -462, -671, 78, -69, -568, -228, -445, -47, -565]
-    increase_3 = list(map(lambda x: x * 3, numbers))
-    print(increase_3)
+
+    colors = ['#B22222', '#DC143C', '#FF0000', '#FF6347', '#FF7F50', '#CD5C5C', '#F08080', '#E9967A',
+              '#FA8072', '#FFA07A', '#FF4500', '#FF8C00', '#FFA500', '#FFD700', '#B8860B', '#DAA520',
+              '#EEE8AA', '#BDB76B', '#F0E68C', '#808000', '#FFFF00', '#9ACD32', '#556B2F', '#6B8E23',
+              '#7CFC00', '#7FFF00', '#ADFF2F']
+
+    for red, green, blue in map(from_hex_to_rgb, colors):
+        print(f"Red={red}, Green={green}, Blue={blue}")
