@@ -1,11 +1,9 @@
+def count_strings(*args):
+    return len(list(elm for elm in args if isinstance(elm, str)))
+
+
 if __name__ == '__main__':
-    employees = [
-        'Pankratiy', 'Innokentiy', 'Anfisa', 'Yaroslava', 'Veniamin',
-        'Leonti', 'Daniil', 'Mishka', 'Lidochka',
-        'Terenti', 'Vladik', 'Svetka', 'Maks', 'Yura', 'Sergei'
-    ]
-
-    identifiers = [77, 48, 88, 85, 76, 81, 62, 43, 5, 56, 17, 20, 37, 32, 96]
-
-    employees_data = dict(zip(sorted(identifiers), sorted(employees)))
-    print(employees_data)
+    print(count_strings(1, 2, 'hello', [2, 3, 4], True))
+    print(count_strings('am', 'world', 'hello', 'is'))
+    print(count_strings())
+    print(count_strings(True, False))
