@@ -4,4 +4,4 @@ def find_keys(**kwargs):
 
 if __name__ == '__main__':
     words = input().split()
-    print(all(['a' in word.lower() for word in words]))
+    print(any([word.lower().endswith('ought') for word in words]))
