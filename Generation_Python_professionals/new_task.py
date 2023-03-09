@@ -24,4 +24,6 @@ if __name__ == '__main__':
     print(deck[4])
     print(deck[43::])
     print(choice(deck))
+    for card in deck:
+        print(card)
 
