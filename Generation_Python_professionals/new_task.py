@@ -1,4 +1,5 @@
 import collections
+from random import choice
 
 Card = collections.namedtuple('Card', ['rank', 'suit'])
 
@@ -20,3 +21,7 @@ class FrenchDeck:
 if __name__ == '__main__':
     deck = FrenchDeck()
     print(len(deck))
+    print(deck[4])
+    print(deck[43::])
+    print(choice(deck))
+
