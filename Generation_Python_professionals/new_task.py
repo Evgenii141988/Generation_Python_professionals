@@ -27,3 +27,7 @@ if __name__ == '__main__':
     for card in deck:
         print(card)
 
+    a = int(input())
+    b = int(input())
+    c = a + b
+    print(f'{a}\\n + \\n{b}\\n = \\n{c}')
