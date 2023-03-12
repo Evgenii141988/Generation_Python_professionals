@@ -18,16 +18,23 @@ class FrenchDeck:
         return self._cards[item]
 
 
+suit_values = dict(spades=3, hearts=2, diamonds=1, clubs=0)
+
+
+def spades_high(card: FrenchDeck):
+    rank_value = FrenchDeck.ranks.index(card.rank)
+    # print(rank_value)
+    print(rank_value * len(suit_values) + suit_values[card.suit])
+    return rank_value * len(suit_values) + suit_values[card.suit]
+
+
 if __name__ == '__main__':
     deck = FrenchDeck()
-    print(len(deck))
-    print(deck[4])
-    print(deck[43::])
-    print(choice(deck))
-    for card in deck:
+    # print(len(deck))
+    # print(deck[4])
+    # print(deck[43::])
+    # print(choice(deck))
+    # for card in deck:
+    #     print(card)
+    for card in sorted(deck, key=spades_high):
         print(card)
-
-    a = int(input())
-    b = int(input())
-    c = a + b
-    print(f'{a}\\n + \\n{b}\\n = \\n{c}')
