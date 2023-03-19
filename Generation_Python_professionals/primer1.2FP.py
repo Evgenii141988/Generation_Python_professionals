@@ -34,3 +34,7 @@ if __name__ == '__main__':
     print(v * 3)
     print(abs(v) * 3)
 
+    x = 'ABC'
+    codes = [last := ord(c) for c in x]
+    print(codes)
+    print(last)
