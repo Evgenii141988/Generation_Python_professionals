@@ -1,4 +1,5 @@
 import math
+import os
 
 
 class Vector:
@@ -38,3 +39,6 @@ if __name__ == '__main__':
     codes = [last := ord(c) for c in x]
     print(codes)
     print(last)
+    _, filename = os.path.split('/home/luciano/.ssh/id_rsa.pub')
+    print(_)
+    print(filename)
